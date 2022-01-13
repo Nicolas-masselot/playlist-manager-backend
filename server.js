@@ -15,7 +15,7 @@ app.use(bodyParser.json({ limit: "5mb" }));
 // app.get("/", (req, res) => res.send("Hello World"));
 const cors = require("cors");
 
-let whitelist = ["https://playlist-manager-admin.herokuapp.com/", "https://playlist-manager-user.herokuapp.com/"];
+/*let whitelist = ["https://playlist-manager-admin.herokuapp.com/", "https://playlist-manager-user.herokuapp.com/"];
 app.use(
     cors({
         origin: function(origin, callback) {
@@ -29,7 +29,9 @@ app.use(
         },
         credentials: true,
     })
-);
+);*/
+
+app.options('*', cors())
 
 app.use("/", routes);
 app.use(express.static("./adverts"));
