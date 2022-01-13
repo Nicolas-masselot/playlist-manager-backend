@@ -32,8 +32,7 @@ app.use(
 );*/
 
 app.use(cors({
-    origin: ["https://playlist-manager-admin.herokuapp.com/", "https://playlist-manager-user.herokuapp.com/"],
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    origin: true,
     credentials: false
 }));
 
