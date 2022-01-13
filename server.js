@@ -31,6 +31,8 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.options('*', cors());
+
 
 app.use("/", routes);
 app.use(express.static("./adverts"));
