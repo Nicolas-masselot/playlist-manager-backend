@@ -13,20 +13,25 @@ const app = express();
 // app.use(cookieParser());
 app.use(bodyParser.json({ limit: "5mb" }));
 // app.get("/", (req, res) => res.send("Hello World"));
-//const cors = require("cors");
+const cors = require("cors");
 
-app.use((req, res, next) => { //doesn't send response just adjusts it
-    res.header("Access-Control-Allow-Origin", "*") //* to give access to any origin
-    res.header(
-        "Access-Control-Allow-Headers",
-        "Origin, X-Requested-With, Content-Type, Accept, Authorization" //to give access to all the headers provided
-    );
-    if(req.method === 'OPTIONS'){
-        res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET'); //to give access to all the methods provided
-        return res.status(200).json({});
-    }
-    next(); //so that other routes can take over
-})
+/*let whitelist = ["https://playlist-manager-admin.herokuapp.com/", "https://playlist-manager-user.herokuapp.com/"];
+app.use(
+    cors({
+        origin: function(origin, callback) {
+            // allow requests with no origin
+            if (!origin) return callback(null, true);
+            if (whitelist.indexOf(origin) === -1) {
+                var message = "The CORS policy for this origin doesn't allow access from the particular origin.";
+                return callback(new Error(message), false);
+            }
+            return callback(null, true);
+        },
+        credentials: true,
+    })
+);*/
+
+app.use(cors());
 
 app.use("/", routes);
 app.use(express.static("./adverts"));
