@@ -17,13 +17,13 @@ const cors = require("cors");
 
 /*let whitelist = ["https://playlist-manager-admin.herokuapp.com/", "https://playlist-manager-user.herokuapp.com/"];*/
 
-const corsOptions = {
+/*const corsOptions = {
   origin: ["https://playlist-manager-admin.herokuapp.com/", "https://playlist-manager-user.herokuapp.com/"],
   methods: ['GET', 'PUT', 'POST'],
   credentials: true
 }
 
-app.use(cors(corsOptions));
+app.use(cors(corsOptions));*/
 
 
 app.use("/", routes);
