@@ -18,8 +18,7 @@ const cors = require("cors");
 /*let whitelist = ["https://playlist-manager-admin.herokuapp.com/", "https://playlist-manager-user.herokuapp.com/"];*/
 
 const corsOptions = {
-  origin: ["https://playlist-manager-admin.herokuapp.com/", "https://playlist-manager-user.herokuapp.com/"],
-  preflightContinue:false,
+  origin: ["https://playlist-manager-admin.herokuapp.com", "https://playlist-manager-user.herokuapp.com"],
   credentials: true
 }
 
